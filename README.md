@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🔧 Modifications from the Original `with-supabase` Template
 
-## Getting Started
+This project is based on the official [`with-supabase`](https://github.com/vercel/next.js/tree/canary/examples/with-supabase) example from the [Vercel Next.js examples](https://github.com/vercel/next.js/tree/canary/examples).
 
-First, run the development server:
+The following customizations have been made to improve structure, upgrade styling tools, and clean up unused code:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ✅ Tailwind CSS Upgrade
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Upgraded **Tailwind CSS to v4** for the latest utility features and performance improvements.
+- Removed the `tailwind.config.ts` file entirely and migrated to **pure CSS custom properties** for theming in `globals.css`.
+- Introduced a more modular, modern theme system using `@theme` mappings and `@custom-variant`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ✅ Project Structure Cleanup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Removed all **`tutorial` components** provided in the example to simplify the project and remove educational scaffolding.
+- Achieved a cleaner, more decoupled structure focused solely on real-world usage.
 
-## Learn More
+### ✅ Auth Component Refactor
 
-To learn more about Next.js, take a look at the following resources:
+- Moved authentication-related components (such as `SignInButton`, `SignOutButton`, etc.) into a new organized directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  ```bash
+  components/auth/
+  ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- This improves clarity and maintainability of the authentication logic.
