@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* ① 主题变量：浅色模式（默认） */
+:root {
+  --color-background: hsl(42, 40%, 95%);
+  --color-foreground: hsl(222 47% 11%);
+  --color-brand: hsl(242 85% 65%);
+  --color-brand-hover: hsl(242 85% 55%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-border: hsl(210 15% 90%);
+
+  --radius: 0.625rem;
+
+  /* 可视化图表色卡 */
+  --color-chart-1: hsl(26 90% 60%);
+  --color-chart-2: hsl(200 80% 60%);
+  --color-chart-3: hsl(230 70% 60%);
+  --color-chart-4: hsl(90 80% 70%);
+  --color-chart-5: hsl(60 80% 70%);
+
+  /* 侧边栏变量 */
+  --color-sidebar: var(--color-background);
+  --color-sidebar-foreground: var(--color-foreground);
+  --color-sidebar-primary: var(--color-brand);
+  --color-sidebar-primary-foreground: var(--color-background);
+  --color-sidebar-accent: hsl(220 20% 80%);
+  --color-sidebar-accent-foreground: var(--color-foreground);
+  --color-sidebar-border: var(--color-card-border);
+  --color-sidebar-ring: hsl(210 20% 70%);
+
+  --color-ring: hsl(210 20% 70%);
+  --color-input: hsl(210 20% 90%);
+  --color-border: var(--color-card-border);
+  --color-destructive: hsl(0 70% 60%);
+  --color-muted: hsl(220 20% 95%);
+  --color-muted-foreground: hsl(220 10% 50%);
+  --color-accent: hsl(220 20% 90%);
+  --color-accent-foreground: var(--color-foreground);
+  --color-primary: var(--color-brand);
+  --color-primary-foreground: var(--color-background);
+  --color-secondary: hsl(220 20% 95%);
+  --color-secondary-foreground: var(--color-foreground);
+  --color-popover: var(--color-card);
+  --color-popover-foreground: var(--color-foreground);
+  --color-card-foreground: var(--color-foreground);
+}
+
+/* ② 深色模式变量（.dark class） */
+.dark {
+  --color-background: hsl(222 47% 7%);
+  --color-foreground: hsl(210 40% 96%);
+  --color-brand: hsl(242 100% 72%);
+  --color-brand-hover: hsl(242 100% 80%);
+  --color-card: hsl(222 25% 14%);
+  --color-card-border: hsl(216 12% 20%);
+
+  --color-chart-1: hsl(264 80% 60%);
+  --color-chart-2: hsl(160 80% 60%);
+  --color-chart-3: hsl(50 80% 60%);
+  --color-chart-4: hsl(300 80% 60%);
+  --color-chart-5: hsl(10 80% 60%);
+
+  --color-sidebar: var(--color-card);
+  --color-sidebar-foreground: var(--color-foreground);
+  --color-sidebar-primary: var(--color-brand);
+  --color-sidebar-primary-foreground: var(--color-background);
+  --color-sidebar-accent: hsl(220 20% 30%);
+  --color-sidebar-accent-foreground: var(--color-foreground);
+  --color-sidebar-border: var(--color-card-border);
+  --color-sidebar-ring: hsl(210 30% 60%);
+
+  --color-ring: hsl(210 30% 60%);
+  --color-input: hsl(210 25% 20%);
+  --color-border: var(--color-card-border);
+  --color-destructive: hsl(0 70% 50%);
+  --color-muted: hsl(220 15% 20%);
+  --color-muted-foreground: hsl(220 10% 70%);
+  --color-accent: hsl(220 20% 30%);
+  --color-accent-foreground: var(--color-foreground);
+  --color-primary: var(--color-brand);
+  --color-primary-foreground: var(--color-background);
+  --color-secondary: hsl(220 15% 20%);
+  --color-secondary-foreground: var(--color-foreground);
+  --color-popover: var(--color-card);
+  --color-popover-foreground: var(--color-foreground);
+  --color-card-foreground: var(--color-foreground);
+}
+
+/* ③ 变量映射给 Tailwind 的自定义属性 */
+@theme inline {
+  --font-sans: var(--font-geist-sans, Inter, ui-sans-serif, system-ui);
+  --font-mono: var(--font-geist-mono, ui-monospace, SFMono-Regular);
+
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-brand: var(--color-brand);
+  --color-brand-hover: var(--color-brand-hover);
+  --color-card: var(--color-card);
+  --color-card-border: var(--color-card-border);
+  --color-ring: var(--color-ring);
+  --color-input: var(--color-input);
+  --color-border: var(--color-border);
+  --color-destructive: var(--color-destructive);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-popover: var(--color-popover);
+  --color-popover-foreground: var(--color-popover-foreground);
+  --color-card-foreground: var(--color-card-foreground);
+  --color-chart-1: var(--color-chart-1);
+  --color-chart-2: var(--color-chart-2);
+  --color-chart-3: var(--color-chart-3);
+  --color-chart-4: var(--color-chart-4);
+  --color-chart-5: var(--color-chart-5);
+  --color-sidebar: var(--color-sidebar);
+  --color-sidebar-foreground: var(--color-sidebar-foreground);
+  --color-sidebar-primary: var(--color-sidebar-primary);
+  --color-sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+  --color-sidebar-accent: var(--color-sidebar-accent);
+  --color-sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+  --color-sidebar-border: var(--color-sidebar-border);
+  --color-sidebar-ring: var(--color-sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ④ 全局元素样式 */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  @apply antialiased leading-relaxed;
+}
+
+a {
+  @apply underline-offset-2 hover:underline decoration-[var(--color-brand)];
+}
+
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  @apply rounded-2xl shadow-sm;
+}
+
+/* ⑥ Tailwind base 层增强 */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
